@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
@@ -84,7 +85,7 @@ abstract class TrapdoorBlockMixin extends HorizontalDirectionalBlock
               + "Lnet/minecraft/world/level/Level;"
               + "Lnet/minecraft/core/BlockPos;"
               + "Lnet/minecraft/world/level/block/Block;"
-              + "Lnet/minecraft/core/BlockPos;"
+              + "Lnet/minecraft/world/level/redstone/Orientation;"
               + "Z"
               + ")V",
       require = 1,
@@ -107,7 +108,7 @@ abstract class TrapdoorBlockMixin extends HorizontalDirectionalBlock
       final Level level,
       final BlockPos pos,
       final Block block,
-      final BlockPos neighborPos,
+      final Orientation orientation,
       final boolean moved,
       final CallbackInfo ci,
       final boolean powered) {

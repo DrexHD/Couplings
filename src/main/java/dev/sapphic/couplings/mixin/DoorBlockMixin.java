@@ -26,6 +26,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.objectweb.asm.Opcodes;
@@ -116,7 +117,7 @@ abstract class DoorBlockMixin extends Block {
               + "Lnet/minecraft/world/level/Level;"
               + "Lnet/minecraft/core/BlockPos;"
               + "Lnet/minecraft/world/level/block/Block;"
-              + "Lnet/minecraft/core/BlockPos;"
+              + "Lnet/minecraft/world/level/redstone/Orientation;"
               + "Z"
               + ")V",
       at =
@@ -139,7 +140,7 @@ abstract class DoorBlockMixin extends Block {
       final Level level,
       final BlockPos pos,
       final Block block,
-      final BlockPos offset,
+      final Orientation orientation,
       final boolean moved,
       final CallbackInfo ci,
       final boolean powered) {
